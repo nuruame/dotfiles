@@ -9,7 +9,5 @@ these dotfiles use [chezmoi](https://chezmoi.io).
 ## install
 
 ```sh
-# install chezmoi 
-chezmoi -S ~/.dotfiles init 
-chezmoi -S ~/.dotfiles apply
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -S ~/.dotfiles init --apply kyoline
 ```
