@@ -1,3 +1,5 @@
 # vim: set filetype=gitignore :
 
 key.txt
+LICENSE
+readme.md
