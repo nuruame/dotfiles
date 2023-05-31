@@ -67,6 +67,7 @@ if status is-interactive
 
     set -x MANPAGER "sh -c 'col -bx | bat -l man -p --paging=always'"
     set -x GPG_TTY $(tty)
+    set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gcr/ssh"
     # enable_transience
 end
 
