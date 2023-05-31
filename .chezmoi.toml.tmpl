@@ -1,0 +1,14 @@
+encryption = "age"
+[age]
+  identity="{{ .chezmoi.sourceDir }}/key.txt"
+  recipient = "age1h3jntelrcn33u6gvxvnurpspgcvp2qw5zjy6v6trpk3sappwlgls49kxfz"
+
+[edit]
+command = "nvim"
+
+[diff]
+pager = "delta"
+
+[merge]
+command = "nvim"
+args = ["-d", "{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Source {{ "}}" }}", "{{ "{{" }} .Target {{ "}}" }}"]
