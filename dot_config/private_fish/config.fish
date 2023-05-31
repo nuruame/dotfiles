@@ -27,7 +27,7 @@ if status is-interactive
     alias j="just"
     alias ls="exa -a"
     alias la="exa -l --no-time --no-icons"
-    alias lg="exa --git -l --git-ignore --no-time"
+    alias lg="exa --git -la --git-ignore --no-time"
     alias cat="bat"
     alias top="btm"
     alias du="dust"
