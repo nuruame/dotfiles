@@ -1,0 +1,74 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+add_newline = false
+# format = "\\($directory( \\[$git_status\\])\\) → $character"
+# format ="${custom.lambdachar}${custom.nix_checker}$directory( \\($git_status\\)) > " 
+format ="$directory($git_branch)([{](bold black)$git_status[}](bold black)) $character" 
+# right_format = "$git_branch( | $status)( | $username@$hostname)"
+right_format = "($status)( | $username@$hostname)"
+
+[status]
+format = "[$status]($style)"
+disabled = false
+
+[character]
+# success_symbol = '[λ](bold green)'
+# error_symbol = '[λ](bold red)'
+success_symbol = '[\$](white)'
+error_symbol = '[\$](bold white)'
+vimcmd_symbol = '[V](bold green)'
+vimcmd_replace_one_symbol = '[V](bold blue)'
+vimcmd_replace_symbol = '[V](bold blue)'
+vimcmd_visual_symbol = '[V](bold purple)'
+
+[directory]
+truncation_length = 1
+truncate_to_repo = true
+format = '[$path]($style)[$read_only]($read_only_style)'
+style = "bold blue"
+
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+ahead = '^'
+behind = 'v'
+diverged = '󰨏'
+untracked = '*'
+stashed = '$'
+modified = '!'
+staged = '+'
+deleted = '-'
+style = 'purple'
+
+# [git_branch]
+# format = '[$symbol$branch(:$remote_branch)]($style)'
+
+[git_branch]
+format = '[:$branch(@$remote_branch)]($style)'
+
+[time]
+disabled = false
+format = "[\\[$time\\]]($style) "
+
+[custom.lambdachar]
+when = "[[ -z $IN_NIX_SHELL && ! -f \"/.dockerenv\" ]]"
+command = "echo 'λ'"
+style = 'bold white'
+shell = ["bash", "--norc", "--noprofile"]
+
+[custom.nix_checker]
+when = "[[ -n $IN_NIX_SHELL ]] || [[ -f \"/.dockerenv\" ]]"
+command = "echo 'λ'"
+style = 'bold blue'
+shell = ["bash", "--norc", "--noprofile"]
+
+[hostname]
+ssh_only = true
+trim_at = "."
+# format = "[\\[\\033[32m\\]]$hostname[\\[\\033[0m\\]]"
+format = "[$hostname]($style)"
+
+[username]
+show_always = false
+disabled = false
+# format = "[\\[\\033[34m\\]]$username[\\[\\033[0m\\]]"
+format = "[$user]($style)"
