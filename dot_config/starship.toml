@@ -3,9 +3,10 @@
 add_newline = false
 # format = "\\($directory( \\[$git_status\\])\\) → $character"
 # format ="${custom.lambdachar}${custom.nix_checker}$directory( \\($git_status\\)) > " 
-format ="$directory($git_branch)([{](bold black)$git_status[}](bold black)) $character" 
+format ="$time $directory($git_branch)([\\[](bold black)$git_status[\\]](bold black)) $character" 
 # right_format = "$git_branch( | $status)( | $username@$hostname)"
 right_format = "($status)( | $username@$hostname)"
+continuation_prompt = "[#>](bold black) "
 
 [status]
 format = "[$status]($style)"
@@ -25,7 +26,7 @@ vimcmd_visual_symbol = '[V](bold purple)'
 truncation_length = 1
 truncate_to_repo = true
 format = '[$path]($style)[$read_only]($read_only_style)'
-style = "bold blue"
+style = "bold green"
 
 [git_status]
 format = "[$all_status$ahead_behind]($style)"
@@ -37,17 +38,21 @@ stashed = '$'
 modified = '!'
 staged = '+'
 deleted = '-'
-style = 'purple'
+style = '#897E98'
 
 # [git_branch]
 # format = '[$symbol$branch(:$remote_branch)]($style)'
 
 [git_branch]
 format = '[:$branch(@$remote_branch)]($style)'
+style = 'bold #897E98'
 
 [time]
 disabled = false
-format = "[\\[$time\\]]($style) "
+# format = "[\\[$time\\]]($style) "
+format = "[{](bold black)[$time]($style)[}](bold black)"
+time_format = "%-H:%M"
+style = 'bold #987E80'
 
 [custom.lambdachar]
 when = "[[ -z $IN_NIX_SHELL && ! -f \"/.dockerenv\" ]]"
