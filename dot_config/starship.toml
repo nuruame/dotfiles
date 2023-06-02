@@ -15,8 +15,8 @@ disabled = false
 [character]
 # success_symbol = '[λ](bold green)'
 # error_symbol = '[λ](bold red)'
-success_symbol = '[\$](white)'
-error_symbol = '[\$](bold white)'
+success_symbol = '[»](white)'
+error_symbol = '[»](bold white)'
 vimcmd_symbol = '[V](bold green)'
 vimcmd_replace_one_symbol = '[V](bold blue)'
 vimcmd_replace_symbol = '[V](bold blue)'
