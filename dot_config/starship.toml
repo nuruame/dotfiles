@@ -6,7 +6,7 @@ add_newline = false
 format ="$time $directory($git_branch)([\\[](bold black)$git_status[\\]](bold black)) $character" 
 # right_format = "$git_branch( | $status)( | $username@$hostname)"
 right_format = "($status)( | $username@$hostname)"
-continuation_prompt = "[#>](bold black) "
+continuation_prompt = "\t[\\$>](bold black) "
 
 [status]
 format = "[$status]($style)"
@@ -15,12 +15,12 @@ disabled = false
 [character]
 # success_symbol = '[λ](bold green)'
 # error_symbol = '[λ](bold red)'
-success_symbol = '[»](white)'
-error_symbol = '[»](bold white)'
-vimcmd_symbol = '[V](bold green)'
-vimcmd_replace_one_symbol = '[V](bold blue)'
-vimcmd_replace_symbol = '[V](bold blue)'
-vimcmd_visual_symbol = '[V](bold purple)'
+success_symbol = '[\$](white)'
+error_symbol = '[\$](bold white)'
+vimcmd_symbol = '[#](bold green)'
+vimcmd_replace_one_symbol = '[#](bold blue)'
+vimcmd_replace_symbol = '[#](bold blue)'
+vimcmd_visual_symbol = '[#](bold purple)'
 
 [directory]
 truncation_length = 1
