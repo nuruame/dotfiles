@@ -8,9 +8,10 @@ end
 
 
 -- font settings
-config.font = wezterm.font_with_fallback {
-  'kyo',
-  'Envy Code R',
+ config.font = wezterm.font_with_fallback {
+    'dreamers',
+--  'kyo',
+--  'Envy Code R',
 }
 config.font_size = 16.0
 
