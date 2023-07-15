@@ -12,7 +12,7 @@ if status is-interactive
     alias mkdir="mkdir -p"
 
     # dotfiles
-    alias df="~/sw/chezmoi -S $HOME/dots"
+    alias df="chezmoi -S $HOME/dots"
     abbr --add dfcd "df cd"
     abbr --add dfat "df add --template"
     abbr --add dfg "df git"
@@ -40,11 +40,16 @@ if status is-interactive
     alias upgrade="ame upgrade --sudoloop --noconfirm"
     alias c="clear"
 
+    alias pk="paru"
+    alias pki="paru -S"
+    alias updatesys="paru -Syu"
+    alias pc="sudo pacman"
+
     abbr --add dc docker-compose
-    abbr --add em "doas emerge"
-    abbr --add emav "doas emerge -av"
-    abbr --add empv "doas emerge -pv"
-    abbr --add emum "doas emerge --autounmask-write --autounmask --ask"
+    # abbr --add em "doas emerge"
+    # abbr --add emav "doas emerge -av"
+    # abbr --add empv "doas emerge -pv"
+    # abbr --add emum "doas emerge --autounmask-write --autounmask --ask"
     abbr --add dpc "doas dispatch-conf"
     abbr --add e. "code-insiders -r ."
     abbr --add dk docker
@@ -56,8 +61,8 @@ if status is-interactive
     abbr --add ghr "gh repo"
     abbr --add pomo "porsmo pomodoro custom 15:00 10:00 20:00"
     abbr --add gnomeversion "gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.freedesktop.DBus.Properties.Get 'org.gnome.Shell' 'ShellVersion'"
-    abbr --add updateworld "doas emerge -auDN --with-bdeps=y @world"
-    abbr --add updategentoo "doas emerge -ND @world"
+    # abbr --add updateworld "doas emerge -auDN --with-bdeps=y @world"
+    # abbr --add updategentoo "doas emerge -ND @world"
 
     alias fzf="fzf --border=rounded --prompt='\$ ' --pointer='~' --marker=' >' --bind 'ctrl-s:toggle'"
 

@@ -4,3 +4,4 @@ key.txt
 LICENSE
 readme.md
 dot_config/.private_fish
+dot_wezterm.lua
