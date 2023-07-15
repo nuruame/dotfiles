@@ -10,15 +10,9 @@ if status is-interactive
     alias move="mv"
     alias cp="cp -r"
     alias mkdir="mkdir -p"
-    alias fd="cd"
-    alias fd.="cd .."
-    alias fd..="cd ../.."
-    alias f="z"
-    alias kf="touch"
-    alias kd="take"
 
     # dotfiles
-    alias df="chezmoi -S $HOME/.dotfiles"
+    alias df="~/sw/chezmoi -S $HOME/dots"
     abbr --add dfcd "df cd"
     abbr --add dfat "df add --template"
     abbr --add dfg "df git"
@@ -31,8 +25,8 @@ if status is-interactive
     alias cat="bat"
     alias top="btm"
     alias du="dust"
-    alias tmux="zellij"
-    alias screen="zellij"
+    # alias tmux="zellij"
+    # alias screen="zellij"
     # mprocs, irust, bacon, and cargo-info don't need aliases.
     # ncspot and porsmo currently don't need them either. 
     alias por="porsmo"
@@ -47,6 +41,11 @@ if status is-interactive
     alias c="clear"
 
     abbr --add dc docker-compose
+    abbr --add em "doas emerge"
+    abbr --add emav "doas emerge -av"
+    abbr --add empv "doas emerge -pv"
+    abbr --add emum "doas emerge --autounmask-write --autounmask --ask"
+    abbr --add dpc "doas dispatch-conf"
     abbr --add e. "code-insiders -r ."
     abbr --add dk docker
     abbr --add fi "fisher install"
@@ -57,6 +56,8 @@ if status is-interactive
     abbr --add ghr "gh repo"
     abbr --add pomo "porsmo pomodoro custom 15:00 10:00 20:00"
     abbr --add gnomeversion "gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.freedesktop.DBus.Properties.Get 'org.gnome.Shell' 'ShellVersion'"
+    abbr --add updateworld "doas emerge -auDN --with-bdeps=y @world"
+    abbr --add updategentoo "doas emerge -ND @world"
 
     alias fzf="fzf --border=rounded --prompt='\$ ' --pointer='~' --marker=' >' --bind 'ctrl-s:toggle'"
 
@@ -64,6 +65,7 @@ if status is-interactive
 
     zoxide init fish | source
     starship init fish | source
+    fish_vi_key_bindings
 
     set -x MANPAGER "sh -c 'col -bx | bat -l man -p --paging=always'"
     set -x GPG_TTY $(tty)
