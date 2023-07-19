@@ -3,9 +3,11 @@
 add_newline = false
 # format = "\\($directory( \\[$git_status\\])\\) → $character"
 # format ="${custom.lambdachar}${custom.nix_checker}$directory( \\($git_status\\)) > " 
-format ="$time $directory($git_branch)([\\[](bold black)$git_status[\\]](bold black)) $character" 
+# format ="($username@$hostname | )$time $directory($git_branch)([\\[](bold black)$git_status[\\]](bold black)) $character" 
+# format ="($username@$hostname | ) $directory($git_branch)([\\[](bold black)$git_status[\\]](bold black)) $character" 
+format ="($username@$hostname | )$directory($git_branch)([](bold black)$git_status[](bold black)) $character" 
 # right_format = "$git_branch( | $status)( | $username@$hostname)"
-right_format = "($status)( | $username@$hostname)"
+right_format = "($status)"
 continuation_prompt = "\t[\\$>](bold black) "
 
 [status]
@@ -17,9 +19,9 @@ disabled = false
 # error_symbol = '[λ](bold red)'
 success_symbol = '[\$](white)'
 error_symbol = '[\$](bold gray)'
-vimcmd_symbol = '[#](bold green)'
-vimcmd_replace_one_symbol = '[#](bold blue)'
-vimcmd_replace_symbol = '[#](bold blue)'
+vimcmd_symbol = '[#](bold purple)'
+vimcmd_replace_one_symbol = '[#](bold purple)'
+vimcmd_replace_symbol = '[#](bold purple)'
 vimcmd_visual_symbol = '[#](bold purple)'
 
 [directory]
@@ -38,13 +40,14 @@ stashed = '$'
 modified = '!'
 staged = '+'
 deleted = '-'
-style = '#897E98'
+# style = '#897E98'
+style = 'bold blue'
 
 # [git_branch]
 # format = '[$symbol$branch(:$remote_branch)]($style)'
 
 [git_branch]
-format = '[:$branch(@$remote_branch)]($style)'
+format = '[[:](bold black)$branch(@$remote_branch)]($style)'
 style = 'bold #897E98'
 
 [time]
@@ -53,18 +56,6 @@ disabled = false
 format = "[{](bold black)[$time]($style)[}](bold black)"
 time_format = "%-H:%M"
 style = 'bold #987E80'
-
-[custom.lambdachar]
-when = "[[ -z $IN_NIX_SHELL && ! -f \"/.dockerenv\" ]]"
-command = "echo 'λ'"
-style = 'bold white'
-shell = ["bash", "--norc", "--noprofile"]
-
-[custom.nix_checker]
-when = "[[ -n $IN_NIX_SHELL ]] || [[ -f \"/.dockerenv\" ]]"
-command = "echo 'λ'"
-style = 'bold blue'
-shell = ["bash", "--norc", "--noprofile"]
 
 [hostname]
 ssh_only = true
