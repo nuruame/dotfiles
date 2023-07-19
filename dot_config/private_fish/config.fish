@@ -40,10 +40,13 @@ if status is-interactive
     alias upgrade="ame upgrade --sudoloop --noconfirm"
     alias c="clear"
 
-    alias pk="paru"
-    alias pki="paru -S"
-    alias updatesys="paru -Syu"
-    alias pc="sudo pacman"
+    abbr --add pk "paru"
+    abbr --add pks "paru -S"
+    abbr --add pkss "paru -Ss"
+    abbr --add updatesys "paru -Syu"
+    abbr --add pc "sudo pacman"
+    abbr --add pcs "sudo pacman -S"
+    abbr --add pcss "sudo pacman -Ss"
 
     abbr --add dc docker-compose
     # abbr --add em "doas emerge"
