@@ -8,11 +8,11 @@
 local wezterm = require("wezterm")
 
 local function font_with_fallback(name, params)
-	local names = { name, "Apple Color Emoji", "azuki_font" }
+	local names = { name, "Icomoon", "Symbols Nerd Font", "Apple Color Emoji", "azuki_font" }
 	return wezterm.font_with_fallback(names, params)
 end
 
-local font_name = "dreams"
+local font_name = "term"
 
 return {
 	-- OpenGL for GPU acceleration, Software for CPU
@@ -36,7 +36,7 @@ return {
 		},
 	},
 	warn_about_missing_glyphs = false,
-	font_size = 11,
+	font_size = 16.0,
 	line_height = 1.0,
 
 	-- Cursor style

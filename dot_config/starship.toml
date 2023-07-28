@@ -5,7 +5,7 @@ add_newline = false
 # format ="${custom.lambdachar}${custom.nix_checker}$directory( \\($git_status\\)) > " 
 # format ="($username@$hostname | )$time $directory($git_branch)([\\[](bold black)$git_status[\\]](bold black)) $character" 
 # format ="($username@$hostname | ) $directory($git_branch)([\\[](bold black)$git_status[\\]](bold black)) $character" 
-format ="($username@$hostname | )$directory($git_branch)([](bold black)$git_status[](bold black)) $character" 
+format ="($username[@](bold black)$hostname [|](bold black) )$directory($git_branch)([](bold black)$git_status[](bold black)) $character" 
 # right_format = "$git_branch( | $status)( | $username@$hostname)"
 right_format = "($status)"
 continuation_prompt = "\t[\\$>](bold black) "
@@ -62,9 +62,12 @@ ssh_only = true
 trim_at = "."
 # format = "[\\[\\033[32m\\]]$hostname[\\[\\033[0m\\]]"
 format = "[$hostname]($style)"
+style = "bold red"
 
 [username]
 show_always = false
 disabled = false
+style_user = "blue"
+style_root = "bold red"
 # format = "[\\[\\033[34m\\]]$username[\\[\\033[0m\\]]"
 format = "[$user]($style)"

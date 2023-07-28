@@ -34,18 +34,24 @@ if status is-interactive
     alias download="axel"
     alias loc="tokei"
     alias dwn="axel"
-    alias i="ame install --sudoloop --noconfirm"
-    alias r="ame remove --sudoloop --noconfirm"
-    alias pkgsearch="ame search"
-    alias upgrade="ame upgrade --sudoloop --noconfirm"
+    # alias i="ame install --sudoloop --noconfirm"
+    # alias r="ame remove --sudoloop --noconfirm"
+    # alias pkgsearch="ame search"
+    # alias upgrade="ame upgrade --sudoloop --noconfirm"
     alias c="clear"
 
-    abbr --add pk "paru"
-    abbr --add pks "paru -S"
-    abbr --add pkss "paru -Ss"
-    abbr --add updatesys "paru -Syu"
+    # abbr --add pk "paru"
+    # abbr --add pks "paru -S --sudoloop --noconfirm"
+    # abbr --add pkr "paru -R --sudoloop --noconfirm"
+    # abbr --add pkss "paru -Ss"
+    abbr --add y "yay"
+    abbr --add i "yay -S --sudoloop --noconfirm"
+    abbr --add r "yay -R --sudoloop --noconfirm"
+    abbr --add yss "yay -Ss"
+    abbr --add upgrade "yay -Syu --sudoloop --noconfirm"
     abbr --add pc "sudo pacman"
-    abbr --add pcs "sudo pacman -S"
+    abbr --add pcs "sudo pacman -S --sudoloop --noconfirm"
+    abbr --add pcr "sudo pacman -R --sudoloop --noconfirm"
     abbr --add pcss "sudo pacman -Ss"
 
     abbr --add dc docker-compose
@@ -75,11 +81,11 @@ if status is-interactive
     starship init fish | source
     fish_vi_key_bindings
 
-    set -x MANPAGER "sh -c 'col -bx | bat -l man -p --paging=always'"
+    # set -x MANPAGER "sh -c 'col -bx | bat -l man -p --color always --paging always'"
     set -x GPG_TTY $(tty)
     set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/gcr/ssh"
     # enable_transience
 end
 
 string match -q "$TERM_PROGRAM" vscode
-and . (code --locate-shell-integration-path fish)
+and . (code-insiders --locate-shell-integration-path fish)
