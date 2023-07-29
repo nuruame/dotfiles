@@ -19,9 +19,17 @@ if status is-interactive
     abbr --add dfa "df apply"
 
     alias j="just"
-    alias ls="exa -a"
-    alias la="exa -l --no-time --no-icons"
-    alias lg="exa --git -la --git-ignore --no-time"
+    # exa
+    # alias ls="exa -a"
+    # alias la="exa -l --no-time --no-icons"
+    # alias lg="exa --git -la --git-ignore --no-time"
+    alias l="exa -al --no-time --no-icons --group-directories-first"
+    alias ls="exa -al --no-time --no-icons --group-directories-first"
+    alias la="exa -a"
+    alias ll="exa -l --no-time --no-icons --group-directories-first"
+    alias lt='exa -aT --no-time --no-icons --group-directories-first'
+    alias l.="exa --group-directories-first --list-dirs (exa -a | grep '^\.')"
+
     alias cat="bat"
     alias top="btm"
     alias du="dust"
@@ -45,13 +53,15 @@ if status is-interactive
     # abbr --add pkr "paru -R --sudoloop --noconfirm"
     # abbr --add pkss "paru -Ss"
     abbr --add y "yay"
-    abbr --add i "yay -S --sudoloop --noconfirm"
-    abbr --add r "yay -R --sudoloop --noconfirm"
+    abbr --add i "yay -Sy --sudoloop --noconfirm"
+    # abbr --add r "yay -Rssd --sudoloop --noconfirm"
+    abbr --add r "yay -Rss --sudoloop --noconfirm"
+    abbr --add ko "yay -Qtdq | yay -Rns -"
     abbr --add yss "yay -Ss"
     abbr --add upgrade "yay -Syu --sudoloop --noconfirm"
     abbr --add pc "sudo pacman"
-    abbr --add pcs "sudo pacman -S --sudoloop --noconfirm"
-    abbr --add pcr "sudo pacman -R --sudoloop --noconfirm"
+    abbr --add pcs "sudo pacman -Sy --sudoloop --noconfirm"
+    abbr --add pcr "sudo pacman -Rssd --sudoloop --noconfirm"
     abbr --add pcss "sudo pacman -Ss"
 
     abbr --add dc docker-compose
