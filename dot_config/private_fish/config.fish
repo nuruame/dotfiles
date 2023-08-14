@@ -8,8 +8,13 @@ if status is-interactive
     alias mvf="mv -f"
     alias movef="mv -f"
     alias move="mv"
-    alias cp="cp -r"
+    alias cp="cp -ri"
     alias mkdir="mkdir -p"
+    alias free="free -h"
+
+    # emacs
+    alias em="emacsclient -c -a 'emacs'"
+    alias emacsnw="/usr/bin/emacs -nw"
 
     # dotfiles
     alias df="chezmoi -S $HOME/dots"
@@ -30,13 +35,20 @@ if status is-interactive
     alias lt='exa -aT --no-time --no-icons --group-directories-first'
     alias l.="exa --group-directories-first --list-dirs (exa -a | grep '^\.')"
 
+    # get fastest mirrors
+    alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+    alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+    alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+    alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
     alias cat="bat"
     alias top="btm"
     alias du="dust"
     # alias tmux="zellij"
     # alias screen="zellij"
     # mprocs, irust, bacon, and cargo-info don't need aliases.
-    # ncspot and porsmo currently don't need them either. 
+    # ripgrep and fd also do not.
+    # ncspot currently don't need them either. 
     alias por="porsmo"
     alias gv="lazygit"
     alias download="axel"
@@ -64,12 +76,16 @@ if status is-interactive
     abbr --add pcr "sudo pacman -Rssd --sudoloop --noconfirm"
     abbr --add pcss "sudo pacman -Ss"
 
+    abbr --add glg "git lg"
+
     abbr --add dc docker-compose
+    abbr --add dcu "docker-compose up"
+    abbr --add dcd "docker-compose down"
     # abbr --add em "doas emerge"
     # abbr --add emav "doas emerge -av"
     # abbr --add empv "doas emerge -pv"
     # abbr --add emum "doas emerge --autounmask-write --autounmask --ask"
-    abbr --add dpc "doas dispatch-conf"
+    # abbr --add dpc "doas dispatch-conf"
     abbr --add e. "code-insiders -r ."
     abbr --add dk docker
     abbr --add fi "fisher install"

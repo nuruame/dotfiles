@@ -1,0 +1,98 @@
+# shellcheck disable=SC2148,SC1091
+# filesystem aliases
+alias rm="rm -rf"
+alias mvf="mv -f"
+alias movef="mv -f"
+alias move="mv"
+alias cp="cp -ri"
+alias mkdir="mkdir -p"
+alias free="free -h"
+
+# emacs
+alias em="emacsclient -c -a 'emacs'"
+alias emacsnw="/usr/bin/emacs -nw"
+
+# dotfiles
+alias df="chezmoi -S \$HOME/dots"
+alias dfcd="df cd"
+alias dfat="df add --template"
+alias dfg="df git"
+alias dfa="df apply"
+
+alias j="just"
+# exa
+# alias ls="exa -a"
+# alias la="exa -l --no-time --no-icons"
+# alias lg="exa --git -la --git-ignore --no-time"
+alias l="exa -al --no-time --no-icons --group-directories-first"
+alias ls="exa -al --no-time --no-icons --group-directories-first"
+alias la="exa -a"
+alias ll="exa -l --no-time --no-icons --group-directories-first"
+alias lt="exa -aT --no-time --no-icons --group-directories-first"
+# alias l.="exa --group-directories-first --list-dirs (exa -a | grep '^\.')"
+
+# get fastest mirrors
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+
+alias cat="bat"
+alias top="btm"
+alias du="dust"
+# alias tmux="zellij"
+# alias screen="zellij"
+# mprocs, irust, bacon, and cargo-info don't need aliases.
+# ripgrep and fd also do not.
+# ncspot currently don't need them either. 
+alias por="porsmo"
+alias gv="lazygit"
+alias download="axel"
+alias loc="tokei"
+alias dwn="axel"
+# alias i="ame install --sudoloop --noconfirm"
+# alias r="ame remove --sudoloop --noconfirm"
+# alias pkgsearch="ame search"
+# alias upgrade="ame upgrade --sudoloop --noconfirm"
+alias c="clear"
+
+# abbr --add pk "paru"
+# abbr --add pks "paru -S --sudoloop --noconfirm"
+# abbr --add pkr "paru -R --sudoloop --noconfirm"
+# abbr --add pkss "paru -Ss"
+alias y="yay"
+alias i="yay -Sy --sudoloop --noconfirm"
+# abbr --add r "yay -Rssd --sudoloop --noconfirm"
+alias r="yay -Rss --sudoloop --noconfirm"
+alias ko="yay -Qtdq | yay -Rns -"
+alias yss="yay -Ss"
+alias upgrade="yay -Syu --sudoloop --noconfirm"
+alias pc="sudo pacman"
+alias pcs="sudo pacman -Sy --sudoloop --noconfirm"
+alias pcr="sudo pacman -Rssd --sudoloop --noconfirm"
+alias pcss="sudo pacman -Ss"
+
+alias glg="git lg"
+
+alias dc="docker-compose"
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
+# abbr --add em "doas emerge"
+# abbr --add emav "doas emerge -av"
+# abbr --add empv "doas emerge -pv"
+# abbr --add emum "doas emerge --autounmask-write --autounmask --ask"
+# abbr --add dpc "doas dispatch-conf"
+alias e="code-insiders -r ."
+alias dk="docker"
+alias fi="fisher install"
+alias fl="fisher list"
+alias cs="source ~/.config/fish/config.fish"
+alias serve="python3 -m http.server"
+alias gcr="gh cr"
+alias ghr="gh repo"
+alias pomo="porsmo pomodoro custom 15:00 10:00 20:00"
+alias gnomeversion="gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.freedesktop.DBus.Properties.Get 'org.gnome.Shell' 'ShellVersion'"
+# abbr --add updateworld "doas emerge -auDN --with-bdeps=y @world"
+# abbr --add updategentoo "doas emerge -ND @world"
+
+alias fzf="fzf --border=rounded --prompt='\$ ' --pointer='~' --marker=' >' --bind 'ctrl-s:toggle'"

@@ -13,3 +13,4 @@ fisher install oh-my-fish/plugin-license
 fisher install halostatue/fish-docker@v1.x
 fisher install oh-my-fish/plugin-gi
 fisher install jorgebucaran/autopair.fish
+fisher install oh-my-fish/plugin-bang-bang

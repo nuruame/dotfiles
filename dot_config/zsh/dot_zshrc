@@ -1,0 +1,28 @@
+# shellcheck disable=SC2148,SC1091,SC1090,SC2086
+# vim: set filetype=sh:
+
+export EDITOR=nvim
+export VISUAL=code-insiders
+
+# source "$ZDOTDIR/.aliases"
+
+[ "$(which zoxide)" ] && eval "$(zoxide init zsh)"
+[ "$(which starship)" ] && eval "$(starship init zsh)"
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+HISTSIZE=500
+SAVEHIST=1000
+HISTFILE=$HOME/.cache/zsh_history
+
+# Tab completion
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
+source <(antibody init)
+antibody bundle < $ZDOTDIR/.zsh_plugins.txt
