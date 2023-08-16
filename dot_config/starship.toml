@@ -5,9 +5,10 @@ add_newline = false
 # format ="${custom.lambdachar}${custom.nix_checker}$directory( \\($git_status\\)) > " 
 # format ="($username@$hostname | )$time $directory($git_branch)([\\[](bold black)$git_status[\\]](bold black)) $character" 
 # format ="($username@$hostname | ) $directory($git_branch)([\\[](bold black)$git_status[\\]](bold black)) $character" 
-format ="($username[@](bold black)$hostname [|](bold black) )$directory($git_branch)([](bold black)$git_status[](bold black)) $character" 
+# format ="($username[@](bold black)$hostname [|](bold black) )$directory($git_branch)([](bold black)$git_status[](bold black)) $character" 
+format = "$time ($username: )$directory( [{](bold black)$git_branch([::](bold black)$git_status)[}](bold black))$character"
 # right_format = "$git_branch( | $status)( | $username@$hostname)"
-right_format = "($status)"
+# right_format = "($status)"
 continuation_prompt = "\t[\\$>](bold black) "
 
 [status]
@@ -17,18 +18,18 @@ disabled = false
 [character]
 # success_symbol = '[λ](bold green)'
 # error_symbol = '[λ](bold red)'
-success_symbol = '[\$](white)'
-error_symbol = '[\$](bold gray)'
-vimcmd_symbol = '[#](bold purple)'
-vimcmd_replace_one_symbol = '[#](bold purple)'
-vimcmd_replace_symbol = '[#](bold purple)'
-vimcmd_visual_symbol = '[#](bold purple)'
+success_symbol = '[\$](#e8e3e3)'
+error_symbol = '[\$](bold #424242)'
+vimcmd_symbol = '[#](bold #a889af)'
+vimcmd_replace_one_symbol = '[#](bold #a889af)'
+vimcmd_replace_symbol = '[#](bold #a889af)'
+vimcmd_visual_symbol = '[#](bold #a889af)'
 
 [directory]
 truncation_length = 1
 truncate_to_repo = true
 format = '[$path]($style)[$read_only]($read_only_style)'
-style = "bold green"
+style = "bold #8ba6a2"
 
 [git_status]
 format = "[$all_status$ahead_behind]($style)"
@@ -41,20 +42,21 @@ modified = '!'
 staged = '+'
 deleted = '-'
 # style = '#897E98'
-style = 'bold blue'
+# style = 'bold blue'
+style = 'bold #d8bc8f'
 
 # [git_branch]
 # format = '[$symbol$branch(:$remote_branch)]($style)'
 
 [git_branch]
-format = '[[:](bold black)$branch(@$remote_branch)]($style)'
+format = '[$branch(@$remote_branch)]($style)'
 style = 'bold #897E98'
 
 [time]
 disabled = false
 # format = "[\\[$time\\]]($style) "
-format = "[{](bold black)[$time]($style)[}](bold black)"
-time_format = "%-H:%M"
+format = "[$time]($style)"
+time_format = "%-H%M"
 style = 'bold #987E80'
 
 [hostname]
@@ -67,7 +69,7 @@ style = "bold red"
 [username]
 show_always = false
 disabled = false
-style_user = "blue"
+style_user = "#987E80"
 style_root = "bold red"
 # format = "[\\[\\033[34m\\]]$username[\\[\\033[0m\\]]"
-format = "[$user]($style)"
+format = "[$user]($style)[:](bold black) "
