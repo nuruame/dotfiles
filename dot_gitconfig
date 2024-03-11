@@ -6,4 +6,7 @@
 	helper = !/usr/bin/gh auth git-credential
 [user]
 	email = rosascript@gmail.com
-	name = Amelia
+	name = stari
+	signingkey = F6FF9493BEA0C5EA
+[commit]
+	gpgsign = true
